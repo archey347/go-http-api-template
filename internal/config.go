@@ -1,29 +1,15 @@
 package internal
 
 import (
-	"github.com/archey347/dynamic-dns/dynamic-dns/internal/http"
+	"github.com/archey347/go-http-api-template/internal/http"
 	"github.com/spf13/viper"
 )
 
 type Config struct {
-	Http    http.Config       `mapstructure:"http"`
-	Keys    map[string]string `mapstructure:"keys"`
-	Zones   []Zone            `mapstructure:"zones"`
-	Updates []Update          `mapstructure:"updates"`
+	Http http.Config `mapstructure:"http"`
 }
 
-type Zone struct {
-	Name    string   `mapstructure:"name"`
-	Pattern string   `mapstructure:"pattern"`
-	Keys    []string `mapstructure:"keys"`
-}
-
-type Update struct {
-	Address string `mapstructure:"address"`
-	Secret  string `mapstructure:"secret"`
-}
-
-const defaultConfigFile = "/etc/dynamic-dns/dynamic-dns-server.yaml"
+const defaultConfigFile = "/etc/go-http-api-template/go-http-api-template.yaml"
 
 func LoadConfig(configFile string) (*Config, error) {
 	if configFile == "" {

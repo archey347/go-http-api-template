@@ -4,15 +4,15 @@ import (
 	"log/slog"
 	"os"
 
-	"github.com/archey347/dynamic-dns/dynamic-dns/internal"
+	"github.com/archey347/go-http-api-template/internal"
 )
 
 func main() {
-	l := slog.With("service", "dynamic-dns-server")
+	l := slog.With("service", "go-http-api-template")
 	l.Info("Starting")
 
 	// Load Config
-	c, err := internal.LoadConfig(os.Getenv("DYNAMIC_DNS_CONFIG"))
+	c, err := internal.LoadConfig(os.Getenv("GO_HTTP_API_CONFIG"))
 	if err != nil {
 		l.Error("Failed to load config", "error", err.Error())
 		return

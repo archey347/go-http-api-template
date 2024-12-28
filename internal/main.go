@@ -6,7 +6,7 @@ import (
 	"log/slog"
 	"time"
 
-	"github.com/archey347/dynamic-dns/dynamic-dns/internal/http"
+	"github.com/archey347/go-http-api-template/internal/http"
 	"github.com/coreos/go-systemd/daemon"
 	"github.com/go-chi/chi"
 	"golang.org/x/sync/errgroup"
